@@ -96,7 +96,7 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk"
 
 # Wallpaper
 New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/dmaristi/windply/main/images/a_rt_wallpaperv2.jpg' -OutFile "C:\DTop\wallpaper.jpg"
+Invoke-WebRequest -Uri 'https://github.com/adcouch/Commandski/raw/main/windply/wallpaper.jpg' -OutFile "C:\DTop\wallpaper.jpg"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
 # Misc
