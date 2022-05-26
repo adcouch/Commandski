@@ -12,4 +12,4 @@ to deploy:
 $Cred = Get-Credential $env:USERNAME
 Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/adcouch/Commandski/main/windply/redwin_deploy.choco -Credential $Cred 
 ```
-Full disclosure the source for this project is https://github.com/dmaristi/windply/.
+Full disclosure the source for this project is https://github.com/dmaristi/windply/ however updated.
