@@ -19,6 +19,7 @@ Set-MpPreference -SubmitSamplesConsent NeverSend
 choco feature enable -n allowGlobalConfirmation
 choco install git
 choco install vscode
+choco install proxifier
 choco install openjdk11
 choco install sysinternals --params "/InstallDir:C:\tools\sysinternals"
 choco install googlechrome --ignore-checksums
