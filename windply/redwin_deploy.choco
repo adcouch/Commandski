@@ -36,6 +36,8 @@ choco install greenshot
 choco install microsoft-windows-terminal
 
 # GitHub
+git clone https://github.com/ropnop/kerbrute.git
+git clone https://github.com/GhostPack/Certify.git
 git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
 git clone https://github.com/dafthack/MailSniper.git C:\tools\MailSniper
 git clone https://github.com/GhostPack/Seatbelt.git C:\tools\Seatbelt
