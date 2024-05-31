@@ -67,16 +67,25 @@ git clone https://github.com/BloodHoundAD/AzureHound C:\tools\AzureHound
 # Kerberute Binary
 # Define the GitHub API URL for the latest release of the ropnop/kerbrute repository
 $apiUrl = "https://api.github.com/repos/ropnop/kerbrute/releases/latest"
-
 # Use Invoke-RestMethod to call the GitHub API
 $latestRelease = Invoke-RestMethod -Uri $apiUrl
-
 # Filter to find the kerbrute_windows_amd64.exe binary
 $binaryUrl = $latestRelease.assets | Where-Object { $_.name -eq "kerbrute_windows_amd64.exe" } | Select-Object -ExpandProperty browser_download_url
-
 # Download the file using Invoke-WebRequest to the below localPath variable.
 $localPath = "C:\tools\kerbrute_windows_amd64.exe"
 Invoke-WebRequest -Uri $binaryUrl -OutFile $localPath
+
+# Snaffler Binary
+$repo = "SnaffCon/Snaffler"
+# Get the latest release from GitHub API
+$latestReleaseUrl = "https://api.github.com/repos/$repo/releases/latest"
+$response = Invoke-RestMethod -Uri $latestReleaseUrl -Headers @{"User-Agent"="Mozilla/5.0"}
+# Extract the URL for the asset you want (assuming only one asset per release)
+$assetUrl = $response.assets[0].browser_download_url
+# Define the destination path for the downloaded file
+$outputPath = "C:\tools\Snaffler.exe"
+# Download the file
+Invoke-WebRequest -Uri $assetUrl -OutFile $outputPath
 
 # IE first run
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"
